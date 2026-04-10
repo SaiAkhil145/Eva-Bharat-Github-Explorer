@@ -1,24 +1,3 @@
-// // const BASE_URL = "https://api.github.com"
-
-// // export const searchUsers = async (query, page = 1) => {
-// //   const res = await fetch(`${BASE_URL}/search/users?q=${query}&page=${page}`)
-// //   if (!res.ok) throw new Error("Failed to fetch users")
-// //   return res.json()
-// // }
-// export const searchUsers = async (query, page = 1) => {
-//   const res = await fetch(
-//     `https://api.github.com/search/users?q=${query}&page=${page}&per_page=10`
-//   )
-
-//   if (!res.ok) throw new Error("Failed to fetch users")
-
-//   return res.json()
-// }
-// export const getUserRepos = async (username) => {
-//   const res = await fetch(`${BASE_URL}/users/${username}/repos`)
-//   if (!res.ok) throw new Error("Failed to fetch repos")
-//   return res.json()
-// }
 
 const BASE_URL = "https://api.github.com"
 

@@ -1,8 +1,12 @@
+import { AlertTriangle } from "lucide-react";
+
 export default function Error({ message, onRetry }) {
   return (
     <div className="state-wrapper">
       <div className="state-card error">
-        <div className="state-icon">⚠️</div>
+        <div className="state-icon">
+          <AlertTriangle size={40} strokeWidth={1.5} />
+        </div>
 
         <h2>Something went wrong</h2>
 
@@ -15,5 +19,5 @@ export default function Error({ message, onRetry }) {
         )}
       </div>
     </div>
-  )
+  );
 }
