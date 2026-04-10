@@ -1,0 +1,17 @@
+.theme-dark {
+  --bg: #020617;       
+  --card: #111827;      
+  --text: #f9fafb;
+  --muted: #9ca3af;
+}
+
+.theme-light {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #475569;
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+}
