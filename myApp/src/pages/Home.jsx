@@ -1,48 +1,6 @@
-// import { useState } from "react"
-// import useDebounce from "../hooks/useDebounce"
-// import useFetchUsers from "../hooks/useFetchUsers"
-// import SearchBar from "../components/SearchBar"
-// import UserCard from "../components/UserCard"
-// import Empty from "../components/Empty"
-// import Loader from "../components/SkeltonLoader"
-// import SkeltonLoader from "../components/SkeltonLoader"
-
-// export default function Home() {
-//   const [query, setQuery] = useState("")
-//   const debounced = useDebounce(query)
-
-//   const { data, loading, error } = useFetchUsers(debounced)
-
-//   return (
-//   <div className="container">
-//   <SearchBar value={query} onChange={setQuery} />
-
-//   {loading && <SkeltonLoader/>}
-
-//   {error && <p>{error}</p>}
-
-
-//   {!query && !loading && (
-//     <Empty message="Start searching to find users 🔍" />
-//   )}
-
- 
-//   {query && !loading && data.length === 0 && (
-//     <Empty message="No users found" />
-//   )}
-
-  
-//   {query && data.length > 0 && (
-//     <div className="grid">
-//       {data.map((user) => (
-//         <UserCard key={user.id} user={user} />
-//       ))}
-//     </div>
-//   )}
-// </div>
-//   )
-// }
 import { useState } from "react"
+import { SearchX, Users } from "lucide-react"
+
 import useDebounce from "../hooks/useDebounce"
 import useFetchUsers from "../hooks/useFetchUsers"
 import SearchBar from "../components/SearchBar"
@@ -57,11 +15,10 @@ export default function Home() {
 
   const debounced = useDebounce(query)
 
-  const { data, loading, error, total } = useFetchUsers(
+  const { data, loading, total } = useFetchUsers(
     debounced,
     page
   )
-
 
   const handleSearch = (val) => {
     setQuery(val)
@@ -75,11 +32,17 @@ export default function Home() {
       {loading && <SpinnerLoader />}
 
       {!query && !loading && (
-        <Empty message="Start searching to find users 🔍" />
+        <Empty 
+          message="Start searching to find users"
+          icon={SearchX}
+        />
       )}
 
       {query && !loading && data.length === 0 && (
-        <Empty message="No users found" />
+        <Empty 
+          message="No users found"
+          icon={Users}
+        />
       )}
 
       {query && data.length > 0 && (
